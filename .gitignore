@@ -1,0 +1,30 @@
+# Ignore python virtual environments
+venv/
+env/
+.venv/
+
+# Ignore compiled python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore environment variables file (DO NOT COMMIT THIS)
+.env
+
+# Ignore uploaded and generated excel files
+uploads/*
+!uploads/.gitkeep
+outputs/*
+!outputs/.gitkeep
+
+# Ignore log files
+logs/*
+!logs/.gitkeep
+
+# Ignore learning notes
+learning_notes/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+projectinfo.md
