@@ -8,45 +8,22 @@ This is the initial setup of the project structure. More documentation to follow
 
 ## Core Workflow
 
-```text
-User
-   │
-   ▼
-Upload Excel File
-   │
-   ▼
-Validate File
-   │
-   ▼
-Read Leads using Pandas
-   │
-   ▼
-For each Lead
-      │
-      ▼
-Load Company Website
-      │
-      ▼
-Extract HTML Content
-      │
-      ▼
-Filter Relevant Business Content
-      │
-      ▼
-Business Analysis Chain
-      │
-      ▼
-Generate Structured Company Summary
-      │
-      ▼
-Email Generation Chain
-      │
-      ▼
-Store Results
-   │
-   ▼
-Generate Updated Excel
-   │
-   ▼
-Download Excel
+```mermaid
+graph LR
+    User([User]) --> Upload[Upload Excel]
+    Upload --> Validate[Validate File]
+    Validate --> Read[Read Leads]
+    Read --> Loop{For each Lead}
+    
+    Loop -->|Process| Load[Load Website]
+    Load --> Extract[Extract HTML]
+    Extract --> Filter[Filter Content]
+    Filter --> Analyze[Business Analysis Chain]
+    Analyze --> Summary[Company Summary]
+    Summary --> Email[Email Generation Chain]
+    Email --> Store[Store Results]
+    Store --> Loop
+    
+    Loop -->|Done| GenExcel[Generate Updated Excel]
+    GenExcel --> Download([Download Excel])
 ```
